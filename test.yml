@@ -1,0 +1,9 @@
+---
+- hosts: all
+  vars_files:
+    - vars/secret.yml
+  su: true
+  tasks:
+  - name: test it
+    file: path=/etc/foo.conf state=touch mode="u=rw,g=r,o=r"
+
